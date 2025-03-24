@@ -1,0 +1,74 @@
+\documentclass[
+	11pt
+	   t,
+	aspectratio=169
+]{beamer}
+
+\graphicspath{{img/}}
+
+\usepackage[alf]{abntex2cite}
+\usepackage{booktabs} 
+\usepackage{palatino} 
+\usepackage[default]{opensans}
+\usepackage{subcaption}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{tabto}
+\usepackage{pgfplots}
+\pgfplotsset{width=8cm,compat=1.9}
+\usepgfplotslibrary{external}
+\tikzexternalize
+\include{./config/code_langs.tex}
+
+\usetheme{Boadilla} 
+
+\definecolor{primaryColor}{RGB}{20,45,105}
+\definecolor{secondaryColor}{RGB}{0,100,160} 
+
+\setbeamercolor{structure}{fg=primaryColor}
+\setbeamercolor{palette primary}{bg=primaryColor, fg=white}
+\setbeamercolor{palette secondary}{bg=secondaryColor, fg=white}
+\setbeamercolor{title}{bg=primaryColor, fg=white}
+
+\setbeamercolor{headline}{bg=secondaryColor, fg=white}
+\setbeamercolor{section in head/foot}{bg=primaryColor, fg=white}
+\setbeamercolor{subsection in head/foot}{bg=secondaryColor, fg=white}
+
+\setbeamercolor{author in head/foot}{bg=primaryColor, fg=white}
+\setbeamercolor{title in head/foot}{bg=secondaryColor, fg=white}
+\setbeamercolor{date in head/foot}{bg=primaryColor, fg=white} 
+\setbeamercolor{page number in head/foot}{bg=primaryColor, fg=white}
+
+\useinnertheme{circles}
+\useoutertheme{miniframes}
+\setbeamertemplate{navigation symbols}{}
+
+
+\title[вводная лекция]{Спортивное программирование. Вводная лекция.}
+\author[Плотников Д.М., Закарюка И.В. ]{Плотников Даниил Михайлович, Закарлюка Иван Владимирович} 
+\institute[СПбГУ]{Санкт-Петербургский Государственный Университет} 
+\date[2025]{} 
+
+%------------------
+
+\begin{document}
+
+\begin{frame}
+	\titlepage
+\end{frame}
+
+\begin{frame}
+	\frametitle{Оглавление}
+	\tableofcontents 
+\end{frame}
+
+\include{sections/greetings}
+\include{sections/resources}
+\include{sections/asympthotics}
+\include{sections/basic}
+\include{sections/pref_sum}
+
+%------------------
+
+\end{document}
+
