@@ -12,9 +12,9 @@
     \frametitle{Логарифм}
 
     \big 
-    $x=\log_a{b}$ это такое число x, что x^a=b
+    $x=\log_a{b}$ это такое число x, что x\^a=b
 
-    $4=\log_4{16}$
+    $2=\log_4{16}$
 
 \end{frame}
 
@@ -22,9 +22,9 @@
 
 \begin{frame}
     \frametitle{Определение}
-    \quad $g(x) = O(f(x)) => \exists C = const : \exists x_1:  \forall x\geq x_1 \Rightarrow Cg(x) \geq f(x)$ 
+    \quad $g(x) = O(f(x)) => \exists C > 0 = const : \exists x_1:  \forall x\geq x_1 \Rightarrow Cf(x) \geq g(x)$ 
 
-    \quad Функция $g(x)$ является асимптотической оценкой функции $f(x)$ тогда, когда существует константа $С$, при которой найдётся такой $x_1$, что для любого $x$, не меньшего $x_1$, выполняется неравенство $Cg(x) \geq f(x)$
+    \quad Функция $f(x)$ является асимптотической оценкой функции $g(x)$ тогда, когда существует положительная константа $С$, при которой найдётся такой $x_1$, что для любого $x$, не меньшего $x_1$, выполняется неравенство $Cf(x) \geq g(x)$
 
 \end{frame}
 
@@ -156,10 +156,10 @@
     \frametitle{Как считать?}
 
     \begin{enumerate}
-        \item Заведём функцию сложности алгоритма
-        \item Посчитаем примерное количество операций
+        \item Придумываем худший случай. Если такового нет, то как худший рассматриваем средний
+        \item Посчитаем примерное количество операций в худший случай
+        \item Получаем функцию ограничивающую колчиство оперций сверху
         \item Держим в уме накладные расходы
-        \item Придумываем худший случай
     \end{enumerate}
 \end{frame}
 
@@ -168,10 +168,10 @@
 \begin{frame}
     \frametitle{Свойства}
 
-    \quad $g(x) = O(f(x)) => \exists C = const : \exists x_1:  \forall x\geq x_1 \Rightarrow Cg(x) \geq f(x)$ 
+    \quad $g(x) = O(f(x)) => \exists C > 0 = const : \exists x_1:  \forall x\geq x_1 \Rightarrow Cf(x) \geq g(x)$ 
 
     \begin{enumerate}
-        \item $a=const \Rightarrow O(af(x))=OO(f(x))$
+        \item $a=const \Rightarrow O(af(x))=O(f(x))$
         \item $O(n^2+n+8)=O(n^2)$\\
     \end{enumerate}
 
@@ -182,10 +182,10 @@
 
 \begin{frame}
     \frametitle{Почему нет основания логарифма?}
-    \quad $O(\log_a{n})=O(\dfrac{\log_b{n}}{\log_b{a}})=\dfrac{1}{\log_b{a}}\log_b{n}\\ \dfrac{1}{\log_b{a}}=const \Rightarrow O(\dfrac{1}{\log_b{a}}\log_b{n})=O(\log_b(n))\Rightarrow O(\log_a{n}) = O(\log_b(n))$
+    \quad $O(\log_a{n})=O(\dfrac{\log_b{n}}{\log_b{a}})=)O(\dfrac{1}{\log_b{a}}\log_b{n})\\ \dfrac{1}{\log_b{a}}=const \Rightarrow O(\dfrac{1}{\log_b{a}}\log_b{n})=O(\log_b(n))\Rightarrow O(\log_a{n}) = O(\log_b(n))$
 
 \\
-    \quadОпять же, стоит понимать что от основания на самом деле влияет скорость выполнения и для точной оценки его следует писать
+    \quad Опять же, стоит понимать что от основания на самом деле влияет скорость выполнения и для точной оценки его следует писать
 \end{frame}
 
 %------------------------------------------------
@@ -200,7 +200,7 @@
                 if (arr[j] > arr[j + 1]) {
                     int tmp = arr[j];
                     arr[j] = arr[j + 1];
-                    arr[j + 1] = b;
+                    arr[j + 1] = tmp;
                 }
             }
         }
@@ -220,7 +220,7 @@
                 if (arr[j] > arr[j + 1]) {
                     int tmp = arr[j];
                     arr[j] = arr[j + 1];
-                    arr[j + 1] = b;
+                    arr[j + 1] = tmp;
                 }
             }
         }
@@ -236,14 +236,14 @@
     \frametitle{Упражнения}
     
     \begin{cpp}
-        int recursion(n){
+        int recursion(int n){
             if(n < 1){
                 return 1;
             }
 
             int ans = 0;
-            for(int i = 0; i < n){
-                ans += recursion(n);
+            for(int i = 0; i < n; ++i){
+                ans += recursion(n-1);
             }
 
             return ans;
@@ -264,15 +264,15 @@
             }
 
             int ans = 0;
-            for(int i = 0; i < n){
-                ans += recursion(n);
+            for(int i = 0; i < n; ++i){
+                ans += recursion(n-1);
             }
 
             return ans;
         }
     \end{cpp}
     
-    Ответ: $O(n^n)$
+    Ответ: $O(n!)$
 \end{frame}
 
 %------------------------------------------------
