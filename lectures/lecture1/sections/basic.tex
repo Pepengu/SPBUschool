@@ -33,10 +33,10 @@
 %------------------------------------------------
 
 \begin{frame}
-    \frametitle{Целые числа. Побитовые оперции}
+    \frametitle{Целые числа. Побитовые операции}
 
     \begin{tabular}{cc}
-        \begin{minipage}{.33\linewidth}
+        \begin{minipage}{.5\linewidth}
             \begin{table}[h!]
                 Побитовое не \sim \\
                 \begin{tabular}{|c|c|}
@@ -50,23 +50,7 @@
             \end{table}
         \end{minipage}
 
-        \begin{minipage}{.25\linewidth}
-            \begin{table}[h!]
-                Побитовое и \& \\
-                \begin{tabular}{|c|c|c|}
-                    \hline
-                    a & b & a\&b \\[0.5ex]
-                    \hline\hline
-                    0 & 0 & 0  \\
-                    0 & 1 & 0  \\
-                    1 & 0 & 0  \\
-                    1 & 1 & 1  \\
-                    \hline
-                \end{tabular}
-            \end{table}
-        \end{minipage}
-
-        \begin{minipage}{.33\linewidth}
+        \begin{minipage}{.4\linewidth}
             \begin{table}[h!]
                 Побитовое и \& \\
                 \begin{tabular}{|c|c|c|}
@@ -87,7 +71,7 @@
 %------------------------------------------------
 
 \begin{frame}
-    \frametitle{Целые числа. Побитовые оперции}
+    \frametitle{Целые числа. Побитовые оперцаии}
 
     \begin{tabular}{cc}
         \begin{minipage}{.5\linewidth}
@@ -169,7 +153,7 @@
     \end{center}
 
     \quad Модификаторы: short, long, signed, unsigned\\
-    \quad При подключении заколовочного файла <cstdint> можно писать int[8/16/32/64/128]\_t и uint[8/16/32/64/128]\_t
+    \quad При подключении заколовочного файла <cstdint> можно писать int[8/16/32/64]\_t и uint[8/16/32/64]\_t
 \end{frame}
 
 %------------------------------------------------
@@ -232,7 +216,7 @@
             cin >> s;
             cout << "Hello, mister " << s << "!";
 
-            cin.flush();
+            cout.flush();
             cout << "\n" << std::endl;
             
             return 0;
