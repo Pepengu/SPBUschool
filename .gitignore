@@ -1,0 +1,12 @@
+*.md5
+*.log
+*.nav
+*.out
+*.vrb
+*.fdb_latexmk
+*.gz
+*.snm
+*.aux
+*.auxlock
+*.toc
+*.fls
