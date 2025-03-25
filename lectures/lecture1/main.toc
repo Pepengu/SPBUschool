@@ -1,5 +1,0 @@
-\babel@toc {russian}{}\relax 
-\beamer@sectionintoc {1}{Ресурсы}{4}{0}{1}
-\beamer@sectionintoc {2}{Асимптотика}{11}{0}{2}
-\beamer@sectionintoc {3}{Основы}{28}{0}{3}
-\beamer@sectionintoc {4}{pref\_sum}{41}{0}{4}
